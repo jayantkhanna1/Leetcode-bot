@@ -74,35 +74,38 @@ class Main:
                     for z in answers:
                         if z["question_title"].lower() == question_name.lower():
                             browser.go_to(z["answer_link"])
-                            time.sleep(10)
-                            code = browser.get_text("tag:pre")
-                            browser.go_to(x)
-                            time.sleep(10)
-                            # select python 3
-                            #browser.click_element("class:ant-select-selection-selected-value")
-                            # not selecting for some reason check this
-
-                            #browser.click_element("xpath:/html/body/div[6]/div/div/div/ul/li[1]")
-                            #time.sleep(5)
-                            # select editor
+                            time.sleep(2)
                             
-                            # paste new code in correct formatting
-                            # submit
-                            back_commands = "CTRL+a Backspace"
-                            browser.press_keys("class:CodeMirror-sizer", back_commands)
-                            # Code error
-                            f = open("test.py","w")
-                            f.write(code)
-                            f.close()
-                            browser.press_keys("class:CodeMirror-sizer", code)
-                            time.sleep(50)
+                            
+                            browser.press_keys("tag:pre", "CTRL+a")
+                            browser.press_keys("tag:pre", "CTRL+c")
+
+                            time.sleep(2)
+
+                            browser.go_to(x)
+
+                            time.sleep(10)
+                            
+                            browser.press_key("class:CodeMirror-code", "CTRL+a BACKSPACE CTRL+v")
+
+                            time.sleep(data["wait_time_for_submitting_answer"])
+
+                            browser.click_element("class:submit__2ISl")
+                            time.sleep(10)
+
+                            try:
+                                if browser.get_text("class:success__3Ai7") == "Success":
+                                    print("Question number - "+str(z["question_number"])+" Solved")
+                                else:
+                                    print("Question number - "+str(z["question_number"])+" Failed")
+                            except:
+                                print("Question number - "+str(z["question_number"])+" Failed")
         else:
             return
 
 
 def main():
-    try:
-        
+    try:       
         Main.launch_the_rocket()
     finally:
         browser.close_browser()
