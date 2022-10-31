@@ -54,21 +54,6 @@ class Login:
                 return logged_in
            
 
-class Scrape:
-    def scrape_and_get_answer(link):
-        list_of_answers = []
-        # I got number of links now somehow i have to extract links from discussion page and then go to each link and extract the answer
-        no_of_links = browser.get_element_count("xpath://a")
-        for i in range(1,no_of_links+1):
-            browser.click_element("xpath://a["+str(i)+"]")
-            print()
-            time.sleep(2)
-            # browser.click_link("Solution")
-            # browser.click_link("Python3")
-            # browser.click_link("Copy")
-            # browser.click_link("Discuss")
-            time.sleep(2)
-        return list_of_answers
 
 class Main:
     def launch_the_rocket():
@@ -79,10 +64,13 @@ class Main:
                 return
             list_of_questions = data["list_of_questions"]
             for x in list_of_questions:
-                link = x + "discuss/?currentPage=1&orderBy=hot&query="
-                browser.go_to(link)
-                list_of_answers = Scrape.scrape_and_get_answer(link)
-                print(list_of_answers)
+                question_link = x + "discuss/?currentPage=1&orderBy=hot&query="
+                solution_link = x + "solution/"
+                browser.go_to(solution_link)
+                browser.click_button("copy-code-btn")
+                # list_of_answers = Scrape.scrape_and_get_answer(link)
+                # print(list_of_answers)
+
                 time.sleep(5)
         else:
             return
