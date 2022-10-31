@@ -1,9 +1,7 @@
 from RPA.Browser.Selenium import Selenium
 import time 
 import json
-from selenium import webdriver
-from bs4 import BeautifulSoup
-import requests
+
 
 browser = Selenium()
 class Details:
@@ -62,16 +60,21 @@ class Main:
             data = Details.get_details()
             if data == "0":
                 return
-            list_of_questions = data["list_of_questions"]
-            for x in list_of_questions:
-                question_link = x + "discuss/?currentPage=1&orderBy=hot&query="
-                solution_link = x + "solution/"
-                browser.go_to(solution_link)
-                browser.click_button("copy-code-btn")
-                # list_of_answers = Scrape.scrape_and_get_answer(link)
-                # print(list_of_answers)
+            if data["do_questions_by_links"] == True:
+                
+                list_of_questions = data["list_of_questions"]
+                for x in list_of_questions:
+                    question_name = x.replace('https://leetcode.com/problems/','')
+                    question_name = question_name.replace('-',' ')
+                    if question_name[len(question_name)-1] == "/":
+                        question_name = question_name[:len(question_name)-1]
 
-                time.sleep(5)
+                    f = open("answers.json", "r")
+                    answers = json.load(f)
+                    for z in answers:
+                        if z["question_title"].lower() == question_name.lower():
+                            browser.go_to(z["answer_link"])
+                            time.sleep(5)
         else:
             return
 

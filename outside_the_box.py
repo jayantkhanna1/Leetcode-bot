@@ -1,3 +1,7 @@
+'''
+The trick is to not think outside the box but to think there is no box
+'''
+
 from bs4 import BeautifulSoup
 import requests
 import json
