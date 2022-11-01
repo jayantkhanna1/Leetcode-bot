@@ -7,7 +7,7 @@ import requests
 import json
 
 # Link to pull answers
-link = "https://github.com/jayantkhanna1/leetcode_solutions"
+link = "https://github.com/jayantkhanna1/leetcode-solutions"
 
 #  Getting whole page 
 r = requests.get(link)
@@ -23,14 +23,25 @@ anchors = list(anchors)
 for x in anchors:
     names.append(x.text)
 
+# Getting answers link
+answers = []
+answer_anchor = s.find_all('a',text = "c++")
+for x in answer_anchor:
+    answers.append(x['href'])
+
+for x in range(0 , len(answers)):
+    temp = str(answers[x])
+    temp = temp.replace('blob/','')
+    answers[x] = temp
+    
 # Making json file
 final_json = []
 flag = 1       
-for x in names:
+for x in range(0,len(names)):
     temp = {
         "question_number" : flag,
-        "question_title" : x,
-        "answer_link" : "https://raw.githubusercontent.com/jayantkhanna1/leetcode_solutions/master/solutions/python3/"+str(flag)+".py"
+        "question_title" : names[x],
+        "answer_link" : "https://raw.githubusercontent.com"+answers[x]
     }
     flag+=1
     final_json.append(temp)

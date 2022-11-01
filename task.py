@@ -74,14 +74,35 @@ class Main:
                     for z in answers:
                         if z["question_title"].lower() == question_name.lower():
                             browser.go_to(z["answer_link"])
-                            time.sleep(5)
+                            time.sleep(10)
+                            code = browser.get_text("tag:pre")
+                            browser.go_to(x)
+                            time.sleep(10)
+                            # select python 3
+                            #browser.click_element("class:ant-select-selection-selected-value")
+                            # not selecting for some reason check this
+
+                            #browser.click_element("xpath:/html/body/div[6]/div/div/div/ul/li[1]")
+                            #time.sleep(5)
+                            # select editor
+                            
+                            # paste new code in correct formatting
+                            # submit
+                            back_commands = "CTRL+a Backspace"
+                            browser.press_keys("class:CodeMirror-sizer", back_commands)
+                            # Code error
+                            f = open("test.py","w")
+                            f.write(code)
+                            f.close()
+                            browser.press_keys("class:CodeMirror-sizer", code)
+                            time.sleep(50)
         else:
             return
 
 
 def main():
     try:
-        #automate_via_gui()
+        
         Main.launch_the_rocket()
     finally:
         browser.close_browser()
