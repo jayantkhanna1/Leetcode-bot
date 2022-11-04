@@ -66,8 +66,7 @@ class Answer:
     def get_answer(answer_link):
         # Getting answer
         answer = requests.get(answer_link)
-        soup = BeautifulSoup(answer.content, 'html.parser')
-        return soup
+        return str(answer.content.decode('utf-8'))
 
 class Main:
     def launch_the_rocket():
@@ -104,29 +103,32 @@ class Main:
                             time.sleep(data["wait_time_for_page_load"])
 
                             # Removes already present code
-                            select_commands = "CTRL+a Backspace"
-                            browser.press_keys("class:CodeMirror-sizer", select_commands)
-
+                            select_commands = "CTRL+a BACKSPACE"
+                            browser.press_keys('xpath://*[@id="editor"]/div[4]/div[1]/div/div/div[1]/div[2]/div[1]/div[4]', select_commands)
+                            delete_commands = "\ue003"
+                            browser.press_keys('xpath://*[@id="editor"]/div[4]/div[1]/div/div/div[1]/div[2]/div[1]/div[4]', delete_commands)
+                            time.sleep(1)
+                            
                             # Copies code to clipboard
                             import pyperclip
                             pyperclip.copy(code)
 
                             # Pastes code in editor and sleeps
                             paste_commands = "CTRL+v"
-                            browser.press_keys("class:CodeMirror-sizer", paste_commands)
+                            browser.press_keys('xpath://*[@id="editor"]/div[4]/div[1]/div/div/div[1]/div[2]/div[1]/div[4]', paste_commands)
 
                             # Sleeping before submitting
                             time.sleep(data["wait_time_for_submitting_answer"])
 
                             # Submits answer
-                            browser.click_element("class:submit__2ISl")
+                            browser.click_element('xpath://*[@id="qd-content"]/div[3]/div/div[3]/div/div/div[3]/div/div/div[3]/button[3]')
 
                             # Sleeping before moving on to next question
                             time.sleep(data["wait_time_for_submitting_answer"])
 
                             # Printing answer passed or not
                             try:
-                                if browser.get_text("class:success__3Ai7") == "Success":
+                                if browser.get_text('xpath://*[@id="qd-content"]/div[1]/div/div/div/div[2]/div/div[1]/div/div[1]/div/span') == "Accepted":
                                     print("Question number - "+str(z["question_number"])+" Solved")
                                 else:
                                     print("Question number - "+str(z["question_number"])+" Failed")
@@ -150,29 +152,31 @@ class Main:
                             time.sleep(data["wait_time_for_page_load"])
 
                             # Removes already present code
-                            select_commands = "CTRL+a Backspace"
-                            browser.press_keys("class:CodeMirror-sizer", select_commands)
-
+                            select_commands = "CTRL+a BACKSPACE"
+                            browser.press_keys('xpath://*[@id="editor"]/div[4]/div[1]/div/div/div[1]/div[2]/div[1]/div[4]', select_commands)
+                            delete_commands = "\ue003"
+                            browser.press_keys('xpath://*[@id="editor"]/div[4]/div[1]/div/div/div[1]/div[2]/div[1]/div[4]', delete_commands)
+                            time.sleep(1)
                             # Copies code to clipboard
                             import pyperclip
                             pyperclip.copy(code)
-
+                            
                             # Pastes code in editor and sleeps
                             paste_commands = "CTRL+v"
-                            browser.press_keys("class:CodeMirror-sizer", paste_commands)
+                            browser.press_keys('xpath://*[@id="editor"]/div[4]/div[1]/div/div/div[1]/div[2]/div[1]/div[4]', paste_commands)
 
                             # Sleeping before submitting
                             time.sleep(data["wait_time_for_submitting_answer"])
 
                             # Submits answer
-                            browser.click_element("class:submit__2ISl")
+                            browser.click_element('xpath://*[@id="qd-content"]/div[3]/div/div[3]/div/div/div/div/div/div[3]/button[3]')
 
                             # Sleeping before moving on to next question
                             time.sleep(data["wait_time_for_submitting_answer"])
 
                             # Printing answer passed or not
                             try:
-                                if browser.get_text("class:success__3Ai7") == "Success":
+                                if browser.get_text('xpath://*[@id="qd-content"]/div[1]/div/div/div/div[2]/div/div[1]/div/div[1]/div/span') == "Accepted":
                                     print("Question number - "+str(z["question_number"])+" Solved")
                                 else:
                                     print("Question number - "+str(z["question_number"])+" Failed")
