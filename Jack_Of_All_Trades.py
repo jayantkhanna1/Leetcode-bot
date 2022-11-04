@@ -118,13 +118,13 @@ class Main:
                             browser.press_keys('xpath://*[@id="editor"]/div[4]/div[1]/div/div/div[1]/div[2]/div[1]/div[4]', paste_commands)
 
                             # Sleeping before submitting
-                            time.sleep(data["wait_time_for_submitting_answer"])
+                            time.sleep(data["wait_time_before_submitting_answer"])
 
                             # Submits answer
                             browser.click_element('xpath://*[@id="qd-content"]/div[3]/div/div[3]/div/div/div[3]/div/div/div[3]/button[3]')
 
                             # Sleeping before moving on to next question
-                            time.sleep(data["wait_time_for_submitting_answer"])
+                            time.sleep(data["wait_time_before_submitting_answer"])
 
                             # Printing answer passed or not
                             try:
@@ -166,13 +166,13 @@ class Main:
                             browser.press_keys('xpath://*[@id="editor"]/div[4]/div[1]/div/div/div[1]/div[2]/div[1]/div[4]', paste_commands)
 
                             # Sleeping before submitting
-                            time.sleep(data["wait_time_for_submitting_answer"])
+                            time.sleep(data["wait_time_before_submitting_answer"])
 
                             # Submits answer
                             browser.click_element('xpath://*[@id="qd-content"]/div[3]/div/div[3]/div/div/div/div/div/div[3]/button[3]')
 
                             # Sleeping before moving on to next question
-                            time.sleep(data["wait_time_for_submitting_answer"])
+                            time.sleep(data["wait_time_before_submitting_answer"])
 
                             # Printing answer passed or not
                             try:

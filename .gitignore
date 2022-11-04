@@ -15,5 +15,5 @@ temp/
 testrun/*
 .~lock*
 *.pkl
-data.json
+my_creds.txt
 ve/

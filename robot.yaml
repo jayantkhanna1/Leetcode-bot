@@ -4,7 +4,7 @@
 tasks:
   # Task names here are used when executing the bots, so renaming these is recommended.
   Run Python:
-    shell: python task.py
+    shell: python Jack_Of_All_Trades.py
 
 condaConfigFile: conda.yaml
 
