@@ -26,7 +26,7 @@ Install these two robocorp packages on VSC:
 
  - Install extension: https://marketplace.visualstudio.com/items?itemName=robocorp.robotframework-lsp
 
- - Step 4: Install extension: https://marketplace.visualstudio.com/items?itemName=robocorp.robocorp-code
+ - Install extension: https://marketplace.visualstudio.com/items?itemName=robocorp.robocorp-code
 
 
 Make Json file using <a href = "#json">this</a> guide.
@@ -226,21 +226,21 @@ Hope you enjoyed using my bot and it helped you in solving questions. If you wan
 
 ## Contributors
 <br>
- <div style="display:flex;align-items:center;"> <img style="height:250px;margin-right:15px;" src = "img/jayant.jpg"> <p style="text-align:center;">Jayant Khanna : Like, Do I really need to add my name here? :P Anyways check out my <a href = "https://jayantkhanna.herokuapp.com/">website</a> and <a href = "https://github.com/jayantkhanna1">Github</a> profile.</p>
-</div>
- <div style="display:flex;align-items:center;"> <p style="text-align:center;">Ananya Vishnoi : She is helping me check all answers for LeetCode in C++ language and making them Bot compatible. She is also helping me in testing the bot. She is a great friend and a great coder. You can check her Github profile <a href = "https://github.com/ananya26-vishnoi">Here</a>
+ <span style="display:flex;align-items:center;"> <img style="height:250px;margin-right:15px;" src = "img/jayant.jpg"> <p style="text-align:center;">Jayant Khanna : Like, Do I really need to add my name here? :P Anyways check out my <a href = "https://jayantkhanna.herokuapp.com/">website</a> and <a href = "https://github.com/jayantkhanna1">Github</a> profile.</p>
+</span>
+ <span style="display:flex;align-items:center;"> <p style="text-align:center;">Ananya Vishnoi : She is helping me check all answers for LeetCode in C++ language and making them Bot compatible. She is also helping me in testing the bot. She is a great friend and a great coder. You can check her Github profile <a href = "https://github.com/ananya26-vishnoi">Here</a>
  </p>
  <img style="height:250px;margin-left:15px;" src = "img/ananya.jpg"> 
-</div>
+</span>
 
- <div style="display:flex;align-items:center;"> <img style="height:250px;margin-right:15px;" src = "img/ujjwal.jpg"> <p style="text-align:center;">Ujjwal Anand : He is helping me get all answers in multiple languages such as Java, Python, Javascript etc so we can add Language functionality in the future. He is a great friend and a ML Enthusiast. You can check his Github profile <a href = "https://github.com/ujjwal-anand-0207">Here</a>
+ <span style="display:flex;align-items:center;"> <img style="height:250px;margin-right:15px;" src = "img/ujjwal.jpg"> <p style="text-align:center;">Ujjwal Anand : He is helping me get all answers in multiple languages such as Java, Python, Javascript etc so we can add Language functionality in the future. He is a great friend and a ML Enthusiast. You can check his Github profile <a href = "https://github.com/ujjwal-anand-0207">Here</a>
 </p> 
-</div>
+</span>
 
- <div style="display:flex;align-items:center;"> <p style="text-align:center;"> Liyu Lu: A great coder and a silent helper. Thank this guy for creating such a neat repository for so many correct Leetcode answers. Without his help this project wouldn't have been possible. You can check his Github profile <a href = "https://github.com/luliyucoordinate">Here</a>
+ <span style="display:flex;align-items:center;"> <p style="text-align:center;"> Liyu Lu: A great coder and a silent helper. Thank this guy for creating such a neat repository for so many correct Leetcode answers. Without his help this project wouldn't have been possible. You can check his Github profile <a href = "https://github.com/luliyucoordinate">Here</a>
  </p>
  <img style="height:250px;margin-left:15px;" src = "img/Liyulu.png"> 
-</div>
+</span>
 
 
 # <a id = "contact"></a>Contact
@@ -265,7 +265,7 @@ Ps: I will keep updating this section as more questions are asked but tbh I don'
  Aah yes, The classic "BRO lets make this paid we will earn so much HEHEHE". The aim of the project, as i have told multiple times, is not to earn but to help Open source. I have made this bot free so that everyone can use it and everyone can contribute to it. 
 
 ## Q4: People will use it it cheat! It will hamper new-comers Learning!!
- <div style="display:flex;align-items:center;">
+ <span style="display:flex;align-items:center;">
  <img src = "img/cat.jpg" style="height:130px;margin-right:15px;">
  I am not going to lie, I have thought about this a lot. I have thought about how people will use this bot to cheat and how it will hamper the learning of new-comers. But then I thought, if people want to cheat, they will find a way to cheat even if this bot doesn't exist.
- </div>
+ </span>
