@@ -291,7 +291,7 @@ Ps: I will keep updating this section as more questions are asked but tbh I don'
 <table>
 <tr>
 <td>
- <img src = "img/cat.jpg" style="height:130px;margin-right:15px;">
+ <img src = "img/cat.jpg" style="height:130px;width:800px;">
  </td>
  <td>
  I am not going to lie, I have thought about this a lot. I have thought about how people will use this bot to cheat and how it will hamper the learning of new-comers. But then I thought, if people want to cheat, they will find a way to cheat even if this bot doesn't exist.
