@@ -4,6 +4,8 @@
     "wait_time_between_submissions" : 10,
     "wait_time_for_page_load" : 5,
 
+    "max_wrong_submissions" : 2,
+
     "do_questions_by_links":false,
     "do_questions_by_range":true,
 

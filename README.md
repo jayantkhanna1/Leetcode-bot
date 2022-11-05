@@ -1,19 +1,37 @@
 # LeetCode Bot
 
-<strong style="font-size:25px;">Do not read me, I am not ready......Y..Ya...Yamate kudasai!</strong>
-
 Hola! This is a leetcode bot that can solve all your leetcode problems while you sit back and sip your coffee. Best part? It is completely free and solves questions at human speed! so you can get those coding assignements done a night before the deadline.
 
 It is user friendly and easy to use. It is also open source and you can <a href = "#contribute">contribute</a> to it! 
 
+If you just wanna do this as quicklly as possible read the <a href = "#tldr">TLDR</a> section. else i would recommend you to read whole Readme as it contains a lot of useful information.
 ## Content
+ - <a href = "#tldr">TLDR (Too Long, Didn't Read)</a>
  - <a href = "#setup">Setup</a>
  - <a href = "#json">Make Json</a>
  - <a href = "#run">Run the Bot</a>
- - <a href = "#error">Error Handling</a>
  - <a href = "#contribute">Contribute</a>
  - <a href = "#faq">FAQ</a>
  - <a href = "#contact">Contact Me</a>
+
+# <a id="tldr"></a>TLDR
+
+You need : 
+ - Python 3.6 or above
+ - Chrome Browser (Default)
+ - Leetcode Account
+ - A good internet connection
+
+Install these two robocorp packages on VSC:
+
+ - Install extension: https://marketplace.visualstudio.com/items?itemName=robocorp.robotframework-lsp
+
+ - Step 4: Install extension: https://marketplace.visualstudio.com/items?itemName=robocorp.robocorp-code
+
+
+Make Json file using <a href = "#json">this</a> guide.
+
+Run the bot using CTRL + SHIFT + P and type "Robocorp: Run Robot Task" Press Enter.
 
 # <a id="setup"></a>Setup
 
@@ -78,6 +96,9 @@ After you clone this repo, you will see a file called <strong>data.json</strong>
 
  - <strong>wait_time_for_page_load</strong>: This is the time (in seconds) the bot will wait for page to load. You can change it to whatever you want. But I would suggest you to increase it if you have slow internet. Keep it minimum to 5 seconds if you have fast internet.(Unless you want to see errors)
 
+
+  - <strong>max_wrong_submissions</strong>: This is max number of wrong submissions before giving a correct one to mimic human like nature although not perfect it might help to  a certain extent. It chooses a random number betwwen 0 to number you set for number of wrong submissions
+
  - <strong>do_questions_by_links</strong> : This is a boolean value. If you want to solve questions by links, set it to true. If you want to solve questions by question number range, set it to false.
 
  - <strong>do_questions_by_range</strong>: This is a boolean value. If you want to solve questions by links, set it to false. If you want to solve questions by question number range, set it to true.
@@ -94,7 +115,7 @@ After you clone this repo, you will see a file called <strong>data.json</strong>
 
  ## I am DUM DUM and don't understand JSON. HELP ME!
 
- Ok Ok no worries just copy this Json data and paste it in your data.json file. Just add your username and password and you are good to go. Ypur questions 1 to 5 will be solved.
+ Ok Ok! no worries just copy this Json data and paste it in your data.json file. Just add your username and password and you are good to go. Your questions 1 to 5 will be solved. Change range to solve others. (If you don't know how to change range, I would suggest you do not use this bot and do questions on your own :P)
 
 ```json
     {
@@ -102,6 +123,8 @@ After you clone this repo, you will see a file called <strong>data.json</strong>
         "wait_time_before_submitting_answer" : 600,
         "wait_time_between_submissions" : 120,
         "wait_time_for_page_load" : 10,
+
+        "max_wrong_submissions" : 2,
 
         "do_questions_by_links":false,
         "do_questions_by_range":true,
@@ -122,3 +145,127 @@ After you clone this repo, you will see a file called <strong>data.json</strong>
 ```
 
 # <a id="run"></a>Run the Bot
+
+Finally we are here. We are going to run the bot. But before that, I would like to tell you how it will work. 
+
+ - First, it will open Chrome and go to Leetcode.com
+ - Then it will login to your account
+ - Then it will wait for you to grant 2FA. (wait_time_for_authorization)
+ - Then it will go to the question you want to solve
+ - Then it will wait for some time and do some wrong submissions if entered in data.json 
+ - Then it will wait for sometime before submitting correct answer
+ - Then it will submit the answer
+ - Then it will wait for some time to go to next question
+ - And so on...
+
+ Only part you have to do is to grant 2FA. Rest is done by the bot. 
+
+ <strong>Note : </strong> Depending on your PC specs/Internet speed it might slow it down so do not worry if your laptop starts hanging. You can kill this bot any time in between nothing will happen to your leetcode account everything will remian as is.
+
+ ## Step 1:
+
+ ```
+Press CTRL + SHIFT + P 
+
+type Robocorp: Run Robot 
+```
+ If you have done Robocorp setup correctly, you will see this option. If not please read <a href = "#setup">Setup</a> section again.
+
+
+## Step 2: 
+
+Make sure you have added your data in data.json file. If you have not done it yet, please read <a href = "#json">Make Json</a> section. If done <strong>press Enter</strong>
+
+<strong>If you are running this for the first time it might take some time to install all Robocorp dependencies. So please be patient. (PS: It took 30 minutes for me to install all dependencies for the first time)</strong>
+
+
+## Step 3:
+
+You will see a new window open. It will autologin depending on your login method. If you have selected Github, it will login via Github. If you have selected Leetcode, it will login via Leetcode.
+
+Here is the screenshot of the bot running with Github Login method.
+
+
+## Step 4:
+
+Now you have to grant 2FA. You will see a new window open. It will ask you to grant 2FA. You have to grant it. You have to do it within time allocated in wait_for_authorizaton. Minimum time will be 30 seconds. If you have not granted 2FA within that time, it will throw an error and bot will stop.
+
+Here is the screenshot of the bot asking for 2FA running with Github Login method.
+
+
+## Step 5:
+
+Now bot will go to your selected question and start solving it. You can see the bot solving the question in the screenshot below.
+
+## Step 6:
+
+It may or may not make a few wrong submissions depending on your data.json file. If you have set max_wrong_submissions to 0, it will not make any wrong submissions. 
+
+Here is a screenshot attached of the bot making wrong submissions.
+
+## Step 7:
+
+It will wait for some time before submitting the correct answer. You can see the bot waiting in the screenshot below.
+
+## Step 8:
+
+It will submit the correct answer. You can see the bot submitting the correct answer in the screenshot below.
+
+## Step 9:
+
+It will wait for some time before going to next question or ending. You can see the bot waiting in the screenshot below.
+
+## Step 10:
+
+Done! Bot ends and you will see following output in the terminal.
+
+
+# <a id = "contribute"></a>Contribute
+
+Hope you enjoyed using my bot and it helped you in solving questions. If you want to contribute to this project, you can do so by <a href= "#conatc">Contacting me </a> and telling me what more can i add to this bot/ If you faced any error while using this bot I will try to fix it as soon as possible and will add your name here.
+
+## Contributors
+<br>
+ <div style="display:flex;align-items:center;"> <img style="height:250px;margin-right:15px;" src = "img/jayant.jpg"> <p style="text-align:center;">Jayant Khanna : Like, Do I really need to add my name here? :P Anyways check out my <a href = "https://jayantkhanna.herokuapp.com/">website</a> and <a href = "https://github.com/jayantkhanna1">Github</a> profile.</p>
+</div>
+ <div style="display:flex;align-items:center;"> <p style="text-align:center;">Ananya Vishnoi : She is helping me check all answers for LeetCode in C++ language and making them Bot compatible. She is also helping me in testing the bot. She is a great friend and a great coder. You can check her Github profile <a href = "https://github.com/ananya26-vishnoi">Here</a>
+ </p>
+ <img style="height:250px;margin-left:15px;" src = "img/ananya.jpg"> 
+</div>
+
+ <div style="display:flex;align-items:center;"> <img style="height:250px;margin-right:15px;" src = "img/ujjwal.jpg"> <p style="text-align:center;">Ujjwal Anand : He is helping me get all answers in multiple languages such as Java, Python, Javascript etc so we can add Language functionality in the future. He is a great friend and a ML Enthusiast. You can check his Github profile <a href = "https://github.com/ujjwal-anand-0207">Here</a>
+</p> 
+</div>
+
+ <div style="display:flex;align-items:center;"> <p style="text-align:center;"> Liyu Lu: A great coder and a silent helper. Thank this guy for creating such a neat repository for so many correct Leetcode answers. Without his help this project wouldn't have been possible. You can check his Github profile <a href = "https://github.com/luliyucoordinate">Here</a>
+ </p>
+ <img style="height:250px;margin-left:15px;" src = "img/Liyulu.png"> 
+</div>
+
+
+# <a id = "contact"></a>Contact
+
+You can contact me on my <a href="mailto:jayantkhanna3105@gmail.com">E - mail</a> or on my <a href="https://www.linkedin.com/in/jayant-khanna-66a274185">LinkedIn</a> profile. You can also contact me on my <a href="https://www.instagram.com/jayant_khanna1/">Instagram</a>, <a href = "https://github.com/jayantkhanna1/">Github</a>, <a href = "https://jayantkhanna.herokuapp.com/">Website</a>. I will try to reply as soon as possible.
+
+If you have any suggestions or want to contribute to this project, you can contact me on any of the above mentioned platforms. You can also contact me if you want to collaborate for some other ideas/project or want to hire me for some freelancing projects. I am always open to new ideas and new projects.
+
+# <a id = "faq"></a>FAQ
+
+Allright so you have read the whole thing and still have some questions. Here are some of the most frequently asked questions. If you have any other questions, you can contact me on any of the platforms mentioned in <a href = "#contact">Contact</a> section.
+
+Ps: I will keep updating this section as more questions are asked but tbh I don't think anyone will be actually reading this section :P
+
+## Q1: Why did you make this bot?
+ To be honest with you I didn't make this bot for cheating my way through a class or to get some marks. I made this Bot because I wanted to learn about Selenium and Robot Framework and I thought this would be a great way to learn. 
+
+## Q2: Why did you make this bot in Robot Framework instead of Core Selenium?
+ I made this bot in Robot Framework because I wanted to learn about Robot Framework. I have been learning Python for a while now and I wanted to learn about other frameworks as well. I have heard a lot about Robot Framework and I thought this would be a great way to learn about it.
+
+## Q3: Why have you made it Free?
+ Aah yes, The classic "BRO lets make this paid we will earn so much HEHEHE". The aim of the project, as i have told multiple times, is not to earn but to help Open source. I have made this bot free so that everyone can use it and everyone can contribute to it. 
+
+## Q4: People will use it it cheat! It will hamper new-comers Learning!!
+ <div style="display:flex;align-items:center;">
+ <img src = "img/cat.jpg" style="height:130px;margin-right:15px;">
+ I am not going to lie, I have thought about this a lot. I have thought about how people will use this bot to cheat and how it will hamper the learning of new-comers. But then I thought, if people want to cheat, they will find a way to cheat even if this bot doesn't exist.
+ </div>

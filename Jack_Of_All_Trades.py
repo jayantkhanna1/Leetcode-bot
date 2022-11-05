@@ -2,8 +2,7 @@ from RPA.Browser.Selenium import Selenium
 import time 
 import json
 import requests
-from bs4 import BeautifulSoup
-
+import random
 
 browser = Selenium()
 class Details:
@@ -68,6 +67,45 @@ class Answer:
         answer = requests.get(answer_link)
         return str(answer.content.decode('utf-8'))
 
+class WrongSubmission:
+    def send_wrong_submission():
+        try:
+            data = Details.get_details() 
+
+            max_wrong_submissions = data["max_wrong_submissions"]
+            wrong_submission = random.randint(0, max_wrong_submissions)
+
+            for x in range(wrong_submission):
+                # Removes already present code
+                select_commands = "CTRL+a BACKSPACE"
+                browser.press_keys('xpath://*[@id="editor"]/div[4]/div[1]/div/div/div[1]/div[2]/div[1]/div[4]', select_commands)
+                delete_commands = "\ue003"
+                browser.press_keys('xpath://*[@id="editor"]/div[4]/div[1]/div/div/div[1]/div[2]/div[1]/div[4]', delete_commands)
+                time.sleep(1)
+
+                # Getting random wrong answer
+                f = open("answers.json", "r")
+                answers = json.load(f)
+                f.close()
+                new_code = Answer.get_answer(answers[random.randint(0, 200)]["answer_link"])
+                
+                # Copies code to clipboard
+                import pyperclip
+                pyperclip.copy(new_code)
+
+                # Pastes code in editor and sleeps
+                paste_commands = "CTRL+v"
+                browser.press_keys('xpath://*[@id="editor"]/div[4]/div[1]/div/div/div[1]/div[2]/div[1]/div[4]', paste_commands)
+
+                # Sleeping before submitting
+                time.sleep(data["wait_time_before_submitting_answer"])
+                
+                # Submits answer
+                browser.click_element('xpath://*[@id="qd-content"]/div[3]/div/div[3]/div/div/div[3]/div/div/div[3]/button[3]')
+                time.sleep(20)
+        except:
+            print("Wrong Submission Failed")
+            return False
 class Main:
     def launch_the_rocket():
         # CHECKS IF LOGGED IN
@@ -101,6 +139,9 @@ class Main:
                             # Gets code and goes to question
                             browser.go_to(x)
                             time.sleep(data["wait_time_for_page_load"])
+
+                            # Sending for wrong submissions
+                            WrongSubmission.send_wrong_submission()
 
                             # Removes already present code
                             select_commands = "CTRL+a BACKSPACE"
@@ -150,6 +191,9 @@ class Main:
                             # Gets code and goes to question
                             browser.go_to("https://leetcode.com/problems/"+z["question_title"].replace(' ','-').lower())
                             time.sleep(data["wait_time_for_page_load"])
+
+                            # Sending for wrong submissions
+                            WrongSubmission.send_wrong_submission()
 
                             # Removes already present code
                             select_commands = "CTRL+a BACKSPACE"
