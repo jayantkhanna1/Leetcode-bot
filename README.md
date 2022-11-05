@@ -226,7 +226,15 @@ Hope you enjoyed using my bot and it helped you in solving questions. If you wan
 
 ## Contributors
 <br>
- <span> <img style="margin-left:50%;height:250px;margin-right:15px;" src = "img/jayant.jpg"> <p style="text-align:center;">Jayant Khanna : Like, Do I really need to add my name here? :P Anyways check out my <a href = "https://jayantkhanna.herokuapp.com/">website</a> and <a href = "https://github.com/jayantkhanna1">Github</a> profile.</p>
+
+<table>
+    <tr>
+        <td><img style="margin-left:50%;height:250px;" src = "img/jayant.jpg"></td>
+        <td><p style="text-align:center;">Jayant Khanna : Like, Do I really need to add my name here? :P Anyways check out my <a href = "https://jayantkhanna.herokuapp.com/">website</a> and <a href = "https://github.com/jayantkhanna1">Github</a> profile.</p></td>
+    </tr>
+</table>
+
+ <!-- <span> <img style="margin-left:50%;height:250px;margin-right:15px;" src = "img/jayant.jpg"> <p style="text-align:center;">Jayant Khanna : Like, Do I really need to add my name here? :P Anyways check out my <a href = "https://jayantkhanna.herokuapp.com/">website</a> and <a href = "https://github.com/jayantkhanna1">Github</a> profile.</p>
 </span>
  <span>  <img style="margin-left:50%;height:250px;margin-left:15px;" src = "img/ananya.jpg"> 
  <p style="text-align:center;">Ananya Vishnoi : She is helping me check all answers for LeetCode in C++ language and making them Bot compatible. She is also helping me in testing the bot. She is a great friend and a great coder. You can check her Github profile <a href = "https://github.com/ananya26-vishnoi">Here</a>
@@ -244,7 +252,7 @@ Hope you enjoyed using my bot and it helped you in solving questions. If you wan
    Liyu Lu: A great coder and a silent helper. Thank this guy for creating such a neat repository for so many correct Leetcode answers. Without his help this project wouldn't have been possible. You can check his Github profile <a href = "https://github.com/luliyucoordinate">Here</a>
  </p>
 
-</span>
+</span> -->
 
 
 # <a id = "contact"></a>Contact
