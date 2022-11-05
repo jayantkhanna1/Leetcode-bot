@@ -233,11 +233,11 @@ Hope you enjoyed using my bot and it helped you in solving questions. If you wan
         <td><p style="text-align:center;">Jayant Khanna : Like, Do I really need to add my name here? :P Anyways check out my <a href = "https://jayantkhanna.herokuapp.com/">website</a> and <a href = "https://github.com/jayantkhanna1">Github</a> profile.</p></td>
     </tr>
     <tr>
-        <td><img style="margin-left:50%;height:250px;width:700px;" src = "img/ananya.jpg"> </td>
         <td>
             <p style="text-align:center;">Ananya Vishnoi : She is helping me check all answers for LeetCode in C++ language and making them Bot compatible. She is also helping me in testing the bot. She is a great friend and a great coder. You can check her Github profile <a href = "https://github.com/ananya26-vishnoi">Here</a>
             </p>
         </td>
+        <td><img style="margin-left:50%;height:250px;width:700px;" src = "img/ananya.jpg"> </td>
     </tr>
     <tr>
         <td><img style="margin-left:50%;height:250px;width:700px;" src = "img/ujjwal.jpg"></td>
