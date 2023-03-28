@@ -4,20 +4,19 @@
     "wait_time_between_submissions" : 10,
     "wait_time_for_page_load" : 5,
 
-    "max_wrong_submissions" : 2,
+    "max_wrong_submissions" : 0,
 
     "do_questions_by_links":false,
     "do_questions_by_range":true,
 
     "list_of_questions":[
-        "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
     ],
-    "list_of_questions_by_range":[1,1],
+    "list_of_questions_by_range":[1,2],
     
     "login_method" : "github",
     "github" : {
-        "username" : "<Your Username>",
-        "password" : "<Your Github Password>"
+        "username" : "<YOUR GITHUB USERNAME>",
+        "password" : "<YOUR GITHUB PASSWORD>"
     },
     "leetcode" : {
         "username" : "<Your Username>",

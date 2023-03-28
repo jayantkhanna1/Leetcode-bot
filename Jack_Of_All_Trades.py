@@ -37,6 +37,9 @@ class LoginMethods:
             except:
                 print("Github Login Failed")
                 return False
+        
+    def login_via_email(data):
+        pass
 
 class Login:
     def login():

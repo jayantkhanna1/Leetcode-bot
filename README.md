@@ -1,6 +1,8 @@
 # LeetCode Bot
 
-Hola! This is a leetcode bot that can solve all your leetcode problems while you sit back and sip your coffee. Best part? It is completely free and solves questions at human speed! so you can get those coding assignements done a night before the deadline.
+<img src="img/cat_hat.jpg" width="300px">
+
+<b>Holaaa!</b> This is a leetcode bot that can solve all your leetcode problems while you sit back and sip your coffee. Best part? It is completely free and solves questions at human speed! so you can get those coding assignements done a night before the deadline.
 
 It is user friendly and easy to use. It is also open source and you can <a href = "#contribute">contribute</a> to it! 
 
@@ -75,6 +77,14 @@ If you face any issues, you can <a href = "#contact">Contact Me</a> .
 ## Chrome
 
 You can download it from <a href = "https://www.google.com/chrome/">here</a>. Make sure to make it your default browser. If you have another default broswer.. It might or might not work on it anyways I am happy to help you if you face any issues. You can <a href = "#contact">Contact Me</a> .
+
+## Pip requirements
+
+Just run following command in your command prompt:
+
+```
+pip install -r requirements.txt
+```
 
 ## Leetcode Account
 
@@ -274,7 +284,7 @@ If you have any suggestions or want to contribute to this project, you can conta
 
 # <a id = "faq"></a>FAQ
 
-Allright so you have read the whole thing and still have some questions. Here are some of the most frequently asked questions. If you have any other questions, you can contact me on any of the platforms mentioned in <a href = "#contact">Contact</a> section.
+Alright so you have read the whole thing and still have some questions. Here are some of the most frequently asked questions. If you have any other questions, you can contact me on any of the platforms mentioned in <a href = "#contact">Contact</a> section.
 
 Ps: I will keep updating this section as more questions are asked but tbh I don't think anyone will be actually reading this section :P
 
